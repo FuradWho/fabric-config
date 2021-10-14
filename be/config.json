@@ -1,0 +1,13 @@
+{
+	"network-configs": {
+		"orggo-network": {
+			"name": "orggo-etwork",
+			"profile": "./connection-profile/orggo-network.json"
+		},
+		"orgcpp-network": {
+			"name": "orgcpp-network",
+			"profile": "./connection-profile/orgcpp-network.json"
+		}
+	},
+	"license": "Apache-2.0"
+}

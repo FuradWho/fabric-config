@@ -1,0 +1,48 @@
+{
+	"name": "orggo-network",
+	"version": "1.0.0",
+	"client": {
+		"tlsEnable": true,
+		"adminCredential": {
+			"id": "exploreradmin",
+			"password": "exploreradminpw"
+		},
+		"enableAuthentication": true,
+		"organization": "OrgGoMSP",
+		"connection": {
+			"timeout": {
+				"peer": {
+					"endorser": "300"
+				},
+				"orderer": "300"
+			}
+		}
+	},
+	"channels": {
+		"mychannel": {
+			"peers": {
+				"peer0.orggo.example.com": {}
+			}
+		}
+	},
+	"organizations": {
+		"OrgGoMSP": {
+			"mspid": "OrgGoMSP",
+			"adminPrivateKey": {
+				"path": "/tmp/crypto/peerOrganizations/orggo.example.com/users/User1@orggo.example.com/msp/keystore/priv_sk"
+			},
+			"peers": ["peer0.orggo.example.com"],
+			"signedCert": {
+				"path": "/tmp/crypto/peerOrganizations/orggo.example.com/users/User1@orggo.example.com/msp/signcerts/User1@orggo.example.com-cert.pem"
+			}
+		}
+	},
+	"peers": {
+		"peer0.orggo.example.com": {
+			"tlsCACerts": {
+				"path": "/tmp/crypto/peerOrganizations/orggo.example.com/peers/peer0.orggo.example.com/tls/ca.crt"
+			},
+			"url": "grpcs://peer0.orggo.example.com:7051"
+		}
+	}
+}
